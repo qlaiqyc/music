@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="../resource/css/font-awesome.css" />
+		<link href="../resource/common/swiper.css" rel="stylesheet">
+		
+	</head>
+	<style>
+html{font-size:14px!important;font-family:"Microsoft YaHei",sans-serif}
+body{background-color:white;margin:0rem auto;max-width:80rem;min-height:10rem}
+.cursor-p{cursor:pointer}
+#music-main{background-color:#f6f6f6}
+.music-main-body{border:1px solid #e3e3e3;border-top:0}
+.music-main-head{height:4rem;background-color:#31c27c}
+.music-main-body-menu{width:21%;float:left;height:40rem;border-right:1px solid #e3e3e3}
+.music-main-body-menu-model{padding-top:1rem;padding-bottom:1rem}
+.music-main-body-menu-model-head{color:#999;padding-left:2rem;font-size:.8rem}
+.music-main-body-menu-item{padding-left:2rem;height:2.4rem;line-height:2.5rem;color:#5d5b5b;cursor:pointer}
+.music-main-body-menu-model-body .active{background-color:#31c27c;color:white}
+.music-main-body-menu-item .fa{margin-right:.8rem}
+.music-main-body-menu-model-body{margin-top:.8rem}
+.music-main-foot audio{width:100%}
+.music-main-body-center{width:78.91%;float:right;height:40rem;overflow-y:auto}
+.swiper-container{width:100%;height:100%}
+.swiper-slide{background-color:red;text-align:center;font-size:18px;background:#fff;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center}
+.swiper-slide img{width:100%;height:20rem}
+.plug-table-body table{border-spacing:0}
+.plug-table-body td{border-bottom:1px solid #e4e4e4;height:2rem;color:rgba(96,89,89,0.8)}
+.muscic-select-model-item-pic img{width:13rem;height:13rem}
+.muscic-select-model-item{float:left;margin-left:2rem;margin-bottom:2rem;cursor:pointer}
+.muscic-select-model-item-name{word-wrap:normal;display:block;width:13em;word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.muscic-select-model-title{font-size:2rem;margin-top:1rem;margin-left:2.2rem;margin-bottom:1rem}
+.muisc-play-head{font-size:1.8rem;padding-left:2rem;margin-top:1rem}
+.muisc-play-body{margin-top:1rem;padding-left:2rem}
+.muisc-play-body-all{border:1px solid #e3e3e3;display:table;float:left;color:#716464;padding:1rem;padding-top:.25rem;padding-bottom:.3rem;border-radius:1rem;background-color:white}
+.muisc-play-body-search{float:right;margin-right:5rem}
+.muisc-play-body-search input{height:2rem;width:18rem;border-radius:.3rem;border:.1rem solid #e3e3e3}
+#muisc-play-table{margin-top:4rem;display:table;width:100%}
+.plug-table-head{width:100%;border-top:1px solid #e3e3e3;border-bottom:1px solid #e3e3e3}
+.plug-table tr{height:3rem}
+.muscic-play-item{cursor:pointer}
+.color-blud{color:cornflowerblue}
+.music-ranking-head-item{
+	    width: 5rem;
+    float: left;
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+    height: 3rem;
+    line-height: 3rem;
+    cursor: pointer;
+    padding-left: .15rem;
+    padding-right: .15rem;
+}
+.music-ranking-head-item:hover{
+	    background-color: #cda410;
+    color: whitesmoke;
+}
+.music-ranking-head .active{
+	background-color: #cda410;
+    color: whitesmoke;
+}
+.music-ranking-head{
+	      width: 46.5%;
+    display: table;
+    background-color: #f6c821;
+    position: absolute;
+        top: 4rem;
+}
+
+#music-ranking-table{margin-top: 3rem;}
+
+	</style>
+	<body>
+	<div id="music-main">
+    <div class="music-main-head">
+
+    </div>
+    <div class="music-main-body">
+        <div class="music-main-body-menu" id="music-main-body-menu">
+            <div class="music-main-body-menu-model">
+                <div class="music-main-body-menu-model-head">在线音乐</div>
+                <div class="music-main-body-menu-model-body">
+                    <div class="music-main-body-menu-item " data-type="select">
+                        <span> <i class="fa fa-music" aria-hidden="true"></i>精选</span>
+
+                    </div>
+
+                    <div class="music-main-body-menu-item active" data-type="ranking">
+                        <span> <i class="fa fa-rocket" aria-hidden="true"></i>排行</span>
+
+                    </div>
+                    <div class="music-main-body-menu-item">
+
+                        <span> <i class="fa fa-play-circle-o" aria-hidden="true"></i>歌单</span>
+
+                    </div>
+                    <div class="music-main-body-menu-item ">
+                        <span> <i class="fa fa-star-o" aria-hidden="true"></i>类型</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="music-main-body-center" id="music-main-body-center">
+            <div id="music-select" style="display: none;">
+
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide"><img src="../resource/img/2.jpg" /></div>
+                        <div class="swiper-slide"><img src="../resource/img/1.jpg" /></div>
+                        <div class="swiper-slide"><img src="../resource/img/2.jpg" /></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+                <div id="muscic-select-model">
+
+                    <div class="muscic-select-model">
+                        <div class="muscic-select-model-content">
+                            <div class="muscic-select-model-item">
+                                <div class="muscic-select-model-item-pic">
+                                    <img src="http://p.qpic.cn/music_cover/XMPAjfs5uwGZdWII3osvAl1Eyy2cJpHndZpXTN7sHFw14szicgAKujQ/300?n=1" />
+                                </div>
+                                <div class="muscic-select-model-item-name">[韩语]一曲治愈创可贴</div>
+                                <div class="muscic-select-model-item-author">一根干柴</div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="music-play" style="display: none;">
+
+                <div class="muisc-play-head">播放列表</div>
+                <div class="muisc-play-body">
+                    <div class="muisc-play-body-all">
+                        播放全部
+                    </div>
+
+                    <div class="muisc-play-body-search">
+
+                        <input type="search" />
+                    </div>
+                </div>
+
+                <div id="muisc-play-table"></div>
+
+            </div>
+
+            <div id="music-hot" style="display: none;">
+
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide"><img src="../resource/img/2.jpg" /></div>
+                        <div class="swiper-slide"><img src="../resource/img/1.jpg" /></div>
+                        <div class="swiper-slide"><img src="../resource/img/2.jpg" /></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+                <p></p>
+                <!--<div id="music-main-body-center-table"></div>-->
+
+            </div>
+			
+			<div id="music-ranking">
+				<div class="music-ranking-head">
+					<div class="music-ranking-head-item"> </div>
+				</div>
+				<div id="music-ranking-table">
+					
+				</div>
+				
+			</div>
+        </div>
+
+    </div>
+    <div class="music-main-foot">
+        <audio src="../resource/139192045.mp3" controls="controls" id="music-main-foot-play"></audio>
+    </div>
+
+</div>	
+	</body>
+	<script type="text/javascript" src="../resource/common/jquery-2.1.0.js" ></script>
+	<script src="../resource/common/swiper.js"></script>
+	<script type="text/javascript" src="../resource/common/table.js" ></script>
+	<script type="text/javascript" src="../resource/js/index.js" ></script>
+</html>
